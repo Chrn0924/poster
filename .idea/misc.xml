@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/MakePoster/Poster/src/main/res/drawable/color_alertdilog_backgrond.xml" value="0.3041025641025641" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/drawable/corners_bg.xml" value="0.2625" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/drawable/corners_bg2.xml" value="0.2625" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/drawable/fp_framework_dialog_cancel_backgrond.xml" value="0.3041025641025641" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/drawable/fp_framework_dialog_confrim_backgrond.xml" value="0.3041025641025641" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/drawable/ic_bubble_big_colorpickerview_skydoves.xml" value="0.296875" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/drawable/rounded_border_text_view.xml" value="0.3030769230769231" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/drawable/rounded_border_tv.xml" value="0.2682291666666667" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/drawable/spot_corners_bg.xml" value="0.2625" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/font/roboto_medium.xml" value="0.28020833333333334" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/add_text_dialog.xml" value="0.2916666666666667" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/color_alertdialog_layout.xml" value="0.29270833333333335" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/color_picker_item_list.xml" value="0.25" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/dialog_colorpicker_colorpickerview_skydoves.xml" value="0.28072916666666664" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/drag_sub_view.xml" value="0.24635416666666668" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/flag_bubble_colorpickerview_skydoves.xml" value="0.28072916666666664" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/fragment_bottom_shapes_dialog.xml" value="0.25" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/fragment_bottom_sticker_emoji_dialog.xml" value="0.25" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/layout_dialog_colorpicker.xml" value="0.2520833333333333" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/make_poster_activity'.xml" value="0.3619791666666667" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/make_poster_activity.xml" value="0.14235055724417425" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/make_poster_activity_2.xml" value="0.2708333333333333" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/my_self_view.xml" value="0.24635416666666668" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/poster_filter_dialog.xml" value="0.19791666666666666" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/poster_opertion_rec_item.xml" value="0.25" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/row_emoji.xml" value="0.25" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/row_filter_view.xml" value="0.25" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/view_photo_editor_image.xml" value="0.25" />
+        <entry key="..\:/MakePoster/Poster/src/main/res/layout/view_photo_editor_text.xml" value="0.2520833333333333" />
+        <entry key="..\:/MakePoster/app/src/main/res/layout/activity_main.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

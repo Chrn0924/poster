@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_above="@id/operation_rec_lin"
+        android:gravity="center"
+        android:id="@+id/make_poster_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.make.poster.view.PhotoEditorView
+            android:id="@+id/make_poster_backgrond_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.make.poster.view.PhotoEditorView>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/operation_rec_lin"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/operation_rec"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFilterView"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout >
