@@ -4,4 +4,4 @@
 支持添加表情
 支持画线 任意线条 直线 方形 圆形
 支持滤镜
-https://user-images.githubusercontent.com/52657309/140912997-95bbbb94-4e75-41ed-bea0-7f6be01c207b.png
+![src=http___img02 sogoucdn com_app_a_200863_img_url_386241_16327104997149 refer=http___img02 sogoucdn](https://user-images.githubusercontent.com/52657309/140913107-6c190d46-fa03-4973-9ede-c6e74fa5d304.jpg)
