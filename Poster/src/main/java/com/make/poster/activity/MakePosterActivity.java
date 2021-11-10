@@ -1,23 +1,21 @@
 package com.make.poster.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.AnticipateOvershootInterpolator;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.transition.ChangeBounds;
-import androidx.transition.TransitionManager;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.guoxiaoxing.phoenix.core.model.MediaEntity;
@@ -34,6 +32,7 @@ import com.make.poster.fragment.MakePosterEmojiFragment;
 import com.make.poster.fragment.MakePosterShapeFragment;
 import com.make.poster.utils.MakePosterLog;
 import com.make.poster.utils.PhoneixUtils;
+import com.make.poster.view.DrawingView;
 import com.make.poster.view.OnPhotoEditorListener;
 import com.make.poster.view.PhotoEditor;
 import com.make.poster.view.PhotoEditorView;
@@ -59,7 +58,7 @@ public class MakePosterActivity extends MPBaseActivity implements OpertionRecAda
 
     private PhotoEditorView backgrondImage;
 
-    private RecyclerView opertionRec,rvFilterView;
+    private RecyclerView opertionRec;
 
     private PhotoEditor mPhotoEditor;
 
@@ -68,8 +67,6 @@ public class MakePosterActivity extends MPBaseActivity implements OpertionRecAda
     private MakePosterShapeFragment mShapeBSFragment;
 
     private ShapeBuilder mShapeBuilder;
-
-    private TextView mTxtCurrentTool;
 
     private final FilterViewAdapter mFilterViewAdapter = new FilterViewAdapter(this);
 
@@ -94,15 +91,11 @@ public class MakePosterActivity extends MPBaseActivity implements OpertionRecAda
         mPhotoEditor.setOnPhotoEditorListener(this);
 
         opertionRec = (RecyclerView) findViewById(R.id.operation_rec);
-        rvFilterView = (RecyclerView)findViewById(R.id.rvFilterView);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(RecyclerView.HORIZONTAL);
         opertionRec.setLayoutManager(manager);
 
-        LinearLayoutManager llmFilters = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        rvFilterView.setLayoutManager(llmFilters);
-        rvFilterView.setAdapter(mFilterViewAdapter);
 
 
 
@@ -124,50 +117,52 @@ public class MakePosterActivity extends MPBaseActivity implements OpertionRecAda
 
         OpertionItemBean opertionItemBean;
 
+
+
         opertionItemBean = new OpertionItemBean();
-        opertionItemBean.setOpertionImageId(R.mipmap.poster_line);
+        opertionItemBean.setOpertionImageId(R.drawable.poster_opertion_line_picture);
         opertionItemBean.setOpertionTips("画线");
         opertionItemBean.setOpertionType(1);
         opertionItemBean.setOpenFunction(true);
         opertionItemBeanList.add(opertionItemBean);
 
         opertionItemBean = new OpertionItemBean();
-        opertionItemBean.setOpertionImageId(R.mipmap.poster_text);
+        opertionItemBean.setOpertionImageId(R.drawable.poster_opertion_text_picture);
         opertionItemBean.setOpertionTips("文本");
         opertionItemBean.setOpertionType(2);
         opertionItemBean.setOpenFunction(true);
         opertionItemBeanList.add(opertionItemBean);
 
         opertionItemBean = new OpertionItemBean();
-        opertionItemBean.setOpertionImageId(R.mipmap.poster_eraser);
+        opertionItemBean.setOpertionImageId(R.drawable.poster_opertion_eraser_picture);
         opertionItemBean.setOpertionTips("橡皮擦");
         opertionItemBean.setOpertionType(3);
         opertionItemBean.setOpenFunction(true);
         opertionItemBeanList.add(opertionItemBean);
 
         opertionItemBean = new OpertionItemBean();
-        opertionItemBean.setOpertionImageId(R.mipmap.poster_filter);
+        opertionItemBean.setOpertionImageId(R.drawable.poster_opertion_filter_picture);
         opertionItemBean.setOpertionTips("滤镜");
         opertionItemBean.setOpertionType(4);
         opertionItemBean.setOpenFunction(true);
         opertionItemBeanList.add(opertionItemBean);
 
         opertionItemBean = new OpertionItemBean();
-        opertionItemBean.setOpertionImageId(R.mipmap.poster_emoji);
+        opertionItemBean.setOpertionImageId(R.drawable.poster_opertion_emoji_picture);
         opertionItemBean.setOpertionTips("表情");
         opertionItemBean.setOpertionType(5);
         opertionItemBean.setOpenFunction(true);
         opertionItemBeanList.add(opertionItemBean);
 
         opertionItemBean = new OpertionItemBean();
-        opertionItemBean.setOpertionImageId(R.mipmap.poster_picture);
+        opertionItemBean.setOpertionImageId(R.drawable.poster_opertion_picture_picture);
         opertionItemBean.setOpertionTips("图片");
         opertionItemBean.setOpertionType(6);
         opertionItemBean.setOpenFunction(true);
         opertionItemBeanList.add(opertionItemBean);
 
         opertionItemBean = new OpertionItemBean();
-        opertionItemBean.setOpertionImageId(R.mipmap.poster_backgrond);
+        opertionItemBean.setOpertionImageId(R.drawable.poster_opertion_background_picture);
         opertionItemBean.setOpertionTips("背景");
         opertionItemBean.setOpertionType(7);
         opertionItemBean.setOpenFunction(true);
@@ -248,7 +243,7 @@ public class MakePosterActivity extends MPBaseActivity implements OpertionRecAda
                 mPhotoEditor.brushEraser();
                 break;
             case 4:
-                PosterFilterDialog.showFilterDialog(this,new FilterViewAdapter(this));
+                PosterFilterDialog.showFilterDialog(this,mFilterViewAdapter);
                 break;
             case 5:
                 showBottomSheetDialogFragment(makePosterEmojiFragment);

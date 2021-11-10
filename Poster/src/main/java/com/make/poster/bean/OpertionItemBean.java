@@ -1,5 +1,7 @@
 package com.make.poster.bean;
 
+import android.graphics.drawable.Drawable;
+
 public class OpertionItemBean {
 
     Integer opertionImageId;
