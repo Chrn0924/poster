@@ -3,99 +3,125 @@ package com.chen.makeposter.activity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.chen.makeposter.R;
-import com.chen.makeposter.base.MPBaseActivity;
-import com.guoxiaoxing.phoenix.core.PhoenixOption;
-import com.guoxiaoxing.phoenix.core.model.MediaEntity;
-import com.guoxiaoxing.phoenix.core.model.MimeType;
-import com.guoxiaoxing.phoenix.picker.Phoenix;
+import com.chen.makeposter.adapter.MainOpertionRecAdapter;
+import com.chen.makeposter.bean.MainOpertionBean;
+import com.chen.makeposter.listener.MainOpertionRecClickItemListener;
 import com.make.poster.activity.MakePosterActivity;
+import com.make.poster.base.MPBaseActivity;
+import com.make.poster.starter.PosterShareListener;
+import com.make.poster.starter.Posterix;
+import com.make.poster.utils.MakePosterLog;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends MPBaseActivity {
+public class MainActivity extends MPBaseActivity implements MainOpertionRecClickItemListener {
 
-    //选择背景的requestcode
-    final int REQUEST_CODE = 100000;
-
-    private TextView addBackgroudImage;
-    private TextView addText;
-    private TextView addImage;
-
+    private RecyclerView homeOpertionRec;
 
     @Override
     protected int initLayout() {
+        setModel(true);
         return R.layout.activity_main;
     }
 
     @Override
     protected void initLayoutId() {
-        addBackgroudImage = findViewById(R.id.mp_button_child_add_backgroud);
-        addText = findViewById(R.id.mp_button_child_add_textview);
-        addImage = findViewById(R.id.mp_button_child_add_image);
-//        colorPickerView = findViewById(R.id.colorPickerView);
-//        brightnessSlideBar = findViewById(R.id.brightnessSlideBar);
-//
-//        colorPickerView.attachBrightnessSlider(brightnessSlideBar);
-
-        startActivity(new Intent(this, MakePosterActivity.class));
-
-
+        homeOpertionRec = findViewById(R.id.main_home_opertion);
+        GridLayoutManager manager = new GridLayoutManager(this,3);
+        homeOpertionRec.setLayoutManager(manager);
     }
 
     @Override
     protected void initLayoutClick() {
 
-//        colorPickerView.setColorListener(new ColorEnvelopeListener() {
-//            @Override
-//            public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
-////                linearLayout.setBackgroundColor(envelope.getColor());
-////                textView.setText("#" + envelope.getHexCode());
-//                MakePosterLog.e("#" + envelope.getHexCode());
-//            }
-//        });
 
 
-        addBackgroudImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Phoenix.with()
-                        .theme(PhoenixOption.THEME_BLUE)// 主题
-                        .fileType(MimeType.ofImage())//显示的文件类型图片、视频、图片和视频
-                        .maxPickNumber(1)// 最大选择数量
-                        .minPickNumber(0)// 最小选择数量
-                        .spanCount(4)// 每行显示个数
-                        .enablePreview(true)// 是否开启预览
-                        .enableCamera(false)// 是否开启拍照
-                        .enableAnimation(true)// 选择界面图片点击效果
-                        .enableCompress(true)// 是否开启压缩
-                        .compressPictureFilterSize(1024)//多少kb以下的图片不压缩
-                        .thumbnailHeight(160)// 选择界面图片高度
-                        .thumbnailWidth(160)// 选择界面图片宽度
-                        .enableClickSound(false)// 是否开启点击声音
-                        //如果是在Activity里使用就传Activity，如果是在Fragment里使用就传Fragment
-                        .start(MainActivity.this, PhoenixOption.TYPE_PICK_MEDIA, REQUEST_CODE);
-
-            }
-        });
     }
 
     @Override
     protected void initData() {
+
+        ArrayList opertionList = new ArrayList();
+
+        MainOpertionBean mainOpertionBean;
+
+        mainOpertionBean = new MainOpertionBean();
+        mainOpertionBean.setOpertionClass(MakePosterActivity.class);
+        mainOpertionBean.setOpetionName("制作海报");
+        mainOpertionBean.setOpetionIcon(R.drawable.main_opertion_poster);
+
+        opertionList.add(mainOpertionBean);
+
+        MainOpertionRecAdapter mainOpertionRecAdapter = new MainOpertionRecAdapter(this,this,opertionList);
+        homeOpertionRec.setAdapter(mainOpertionRecAdapter);
+
+    }
+
+    @Override
+    protected void initOthers() {
+
+    }
+
+    @Override
+    protected void onResumeMethod() {
+
+    }
+
+    @Override
+    protected void initTestMethod() {
+
+    }
+
+    @Override
+    protected void setTtitle(TextView val) {
+        val.setText("功能列表");
+    }
+
+    @Override
+    protected void setShareContent(TextView val) {
+        val.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void shareClickListener() {
+
+    }
+
+    @Override
+    protected void backImage(ImageView backImage) {
+        backImage.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void backImageClick() {
+
+    }
+
+    @Override
+    protected void destoryInit() {
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
-            //返回的数据
-            List<MediaEntity> result = Phoenix.result(data);
-            for(int i=0;i<result.size();i++){
-                Log.e("chen","选择的数据 -> "+result.get(i).getLocalPath());
-            }
+    }
+
+    @Override
+    public void clickItemListener(Class mClass, int postion) {
+
+        if(mClass == MakePosterActivity.class){
+            Posterix.with().opertionColor(R.color.sky_blue_color_picker).start(this,100001);
         }
+
     }
 }

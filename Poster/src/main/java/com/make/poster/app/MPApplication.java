@@ -7,12 +7,16 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.guoxiaoxing.phoenix.core.listener.ImageLoader;
 import com.guoxiaoxing.phoenix.picker.Phoenix;
+import com.make.poster.R;
+import com.make.poster.starter.Posterix;
 import com.make.poster.utils.MakePosterLog;
 
 public class MPApplication extends Application {
 
-    public static final int DEBUGTYPE = 2;
+    public static final int DEBUGTYPE = 1;
 
+    //配置操作svg格式图片颜色 直接修改全部
+    public static int OPERTIONSVGCOLOR = R.color.blue;
 
     @Override
     public void onCreate() {
@@ -25,6 +29,7 @@ public class MPApplication extends Application {
                 Glide.with(context).load(imagePath).into(imageView);
             }
         });
+
 
     }
 }

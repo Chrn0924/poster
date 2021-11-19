@@ -33,15 +33,29 @@
         <entry key="..\:/MakePoster/Poster/src/main/res/layout/view_photo_editor_image.xml" value="0.25" />
         <entry key="..\:/MakePoster/Poster/src/main/res/layout/view_photo_editor_text.xml" value="0.2520833333333333" />
         <entry key="..\:/MakePoster/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/base_share_button.xml" value="0.2557291666666667" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/color_alertdilog_backgrond.xml" value="0.24322916666666666" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/fp_framework_dialog_confrim_backgrond.xml" value="0.24322916666666666" />
         <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/ic___.xml" value="0.209375" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/ic_bubble_big_colorpickerview_skydoves.xml" value="0.24322916666666666" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/main_opertion_poster.xml" value="0.24583333333333332" />
         <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/poster_opertion_backgrond_picture.xml" value="0.209375" />
         <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/poster_opertion_background_picture.xml" value="0.209375" />
         <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/poster_opertion_emoji_picture.xml" value="0.209375" />
         <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/poster_opertion_eraser_picture.xml" value="0.209375" />
         <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/poster_opertion_filter_picture.xml" value="0.209375" />
         <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/poster_opertion_line_picture.xml" value="0.209375" />
-        <entry key="..\:/PosterGit/poster/Poster/src/main/res/layout/make_poster_activity.xml" value="0.24895833333333334" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/poster_opertion_next.xml" value="0.2390625" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/drawable/poster_opertion_recall.xml" value="0.2390625" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/layout/base_activity.xml" value="0.225" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/layout/fragment_bottom_sticker_emoji_dialog.xml" value="0.22291666666666668" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/layout/main_opertion_item.xml" value="0.2296875" />
+        <entry key="..\:/PosterGit/poster/Poster/src/main/res/layout/make_poster_activity.xml" value="0.15" />
         <entry key="..\:/PosterGit/poster/Poster/src/main/res/layout/poster_opertion_rec_item.xml" value="0.19322916666666667" />
+        <entry key="..\:/PosterGit/poster/app/src/main/res/drawable/main_opertion_poster.xml" value="0.22708333333333333" />
+        <entry key="..\:/PosterGit/poster/app/src/main/res/layout/activity_main.xml" value="0.19895833333333332" />
+        <entry key="..\:/PosterGit/poster/app/src/main/res/layout/main_opertion_item.xml" value="0.11144883485309018" />
+        <entry key="..\:/PosterGit/poster/app/src/main/res/layout/main_opertion_items.xml" value="0.21770833333333334" />
       </map>
     </option>
   </component>

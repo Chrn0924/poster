@@ -27,19 +27,81 @@
         android:gravity="center_vertical"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="90dp">
 
         <RelativeLayout
+            android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/operation_rec"
+            <LinearLayout
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:id="@+id/opertion_recall"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/opertion_revocation"
+                    android:layout_width="40dp"
+                    android:layout_height="25dp">
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/opertion_nextstep"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="40dp"
+                    android:layout_height="25dp">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_below="@id/opertion_recall"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="wrap_content">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@id/opertion_save_lin"
+                    android:id="@+id/operation_rec"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
 
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <LinearLayout
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/opertion_save_lin"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/opertion_save_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:text="保存"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
 
 
         </RelativeLayout>

@@ -3,12 +3,14 @@ package com.make.poster.fragment;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,6 +31,14 @@ public class MakePosterEmojiFragment extends BottomSheetDialogFragment {
 
     public interface EmojiListener {
         void onEmojiClick(String emojiUnicode);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme);
+
     }
 
     private BottomSheetBehavior.BottomSheetCallback mBottomSheetBehaviorCallback = new BottomSheetBehavior.BottomSheetCallback() {
@@ -58,7 +68,9 @@ public class MakePosterEmojiFragment extends BottomSheetDialogFragment {
         if (behavior != null && behavior instanceof BottomSheetBehavior) {
             ((BottomSheetBehavior) behavior).setBottomSheetCallback(mBottomSheetBehaviorCallback);
         }
-        ((View) contentView.getParent()).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+
+        ((View) contentView.getParent()).setBackgroundColor(getResources().getColor(R.color.transparent));
+
         RecyclerView rvEmoji = contentView.findViewById(R.id.rvEmoji);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 5);

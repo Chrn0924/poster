@@ -20,6 +20,7 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.make.poster.R;
+import com.make.poster.app.MPApplication;
 import com.make.poster.bean.OpertionItemBean;
 import com.make.poster.utils.MakePosterLog;
 
@@ -52,7 +53,7 @@ public class OpertionRecAdapter extends RecyclerView.Adapter<OpertionRecAdapter.
     public void onBindViewHolder(@NonNull OpertionRecAdapterHolder holder, @SuppressLint("RecyclerView") int position) {
 
         Drawable drawable = context.getResources().getDrawable(list.get(position).getOpertionImageId()).mutate();
-        drawable.setColorFilter(context.getColor(R.color.blue),PorterDuff.Mode.SRC_ATOP);
+        drawable.setColorFilter(context.getColor(MPApplication.OPERTIONSVGCOLOR),PorterDuff.Mode.SRC_ATOP);
 
         holder.itemIamge.setImageDrawable(drawable);
 
