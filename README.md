@@ -18,4 +18,6 @@
 
 yulong chen
 
-## 感谢使用
+## 使用方法
+
+download zip 或者 clone到本地 将Poster导入module中
